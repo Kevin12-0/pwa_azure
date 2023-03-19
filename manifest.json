@@ -1,6 +1,6 @@
 {
-    "name": "Dev'Coffee",
-    "short_name": "DevCoffee",
+    "name": "pwa-cv-v1",
+    "short_name": "pwa",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#fdfdfd",
