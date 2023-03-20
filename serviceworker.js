@@ -1,4 +1,4 @@
-const cache_name = "pwa-cv-v1";
+const cache_name = "pwa_cv_kevin";
 const urlsToCache = [
     '/', 'js/index.js', "/index.html"
 ];
