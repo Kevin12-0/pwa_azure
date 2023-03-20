@@ -17,6 +17,21 @@ self.addEventListener("fetch", event => {
     event.respondWith(cacheAndReturnRequest());
 });
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/serviceworker.js', { scope: '/' });
-}
+const registerServiceWorker = async () => {
+    if ("serviceWorker" in navigator) {
+        try {
+            const registration = await navigator.serviceWorker.register("/sw.js", {
+                scope: "/",
+            });
+            if (registration.installing) {
+                console.log("Instalando el Service worker");
+            } else if (registration.waiting) {
+                console.log("Service worker instalado");
+            } else if (registration.active) {
+                console.log("Service worker activo");
+            }
+        } catch (error) {
+            console.error(`Falló el registro con el ${error}`);
+        }
+    }
+};
