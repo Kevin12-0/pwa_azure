@@ -17,4 +17,5 @@ self.addEventListener("fetch", event => {
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    console.log("SW.JS");
 }
