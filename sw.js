@@ -7,6 +7,7 @@ self.addEventListener('install', event => {
         cache.addAll([
             '/',
             '/index.js',
+            "/css/bootstrap.css"
         ]);
     })());
 });
