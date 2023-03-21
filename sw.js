@@ -1,7 +1,7 @@
 const cache_name = "pwa_cv_kevin";
 self.addEventListener('install', event => {
     event.waitUntil((async () => {
-        const cache = await caches.open(CACHE_NAME);
+        const cache = await caches.open(cache_name);
         cache.addAll([
             '/',
             '/index.js'
