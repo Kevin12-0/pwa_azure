@@ -1,17 +1,19 @@
-const cache_name = "pwa_cv_kevin";
+const CACHE_NAME = `temperature-converter-v1`;
+
+// Use the install event to pre-cache all initial resources.
 self.addEventListener('install', event => {
     event.waitUntil((async () => {
-        const cache = await caches.open(cache_name);
+        const cache = await caches.open(CACHE_NAME);
         cache.addAll([
             '/',
-            '/index.js'
+            '/index.js',
         ]);
     })());
 });
 
 self.addEventListener('fetch', event => {
     event.respondWith((async () => {
-        const cache = await caches.open(cache_name);
+        const cache = await caches.open(CACHE_NAME);
 
         // Get the resource from the cache.
         const cachedResponse = await cache.match(event.request);
