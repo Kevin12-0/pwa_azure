@@ -7,12 +7,11 @@ const dataSave = async () => {
     /* obtener el nombre y vercion de un navegador */
     const navigator = bowser.name;
     const version = bowser.version;
-    const objectData = {
-        navigator: navigator,
-        coment: comentText
-    }
-    console.log(comentText);
-    console.log(`${navigator} ${version}`);
-    console.log(localStorage.setItem("navegador", `$navigator $version`));
-
+    /* se guarda en localStorage */
+    localStorage.setItem("navegador", `${navigator} v.${version}`);
+    /* imprime lo guardado en localStorage */
+    console.log(localStorage.getItem("navegador"));
+    /* Guardar comentario en localStorage */
+    localStorage.setItem("comentario", comentText)
+    console.log(localStorage.getItem("comentario"));
 }
